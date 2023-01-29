@@ -1,0 +1,29 @@
+{
+  "name": "apex-legends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.33.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "helmet": "^6.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb": "^4.13.0",
+    "multer": "^1.4.5-lts.1",
+    "oauth2-server": "^3.1.1",
+    "passport": "^0.6.0",
+    "passport-google-oauth2": "^0.2.0",
+    "streamifier": "^0.1.1",
+    "swagger-ui-express": "^4.6.0"
+  }
+}

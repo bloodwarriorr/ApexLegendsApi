@@ -1,0 +1,131 @@
+{
+  "swagger": "2.0",
+  "info": {
+      "version": "1.0.0",
+      "title": "Legends API"
+  },
+  "host": "localhost:5008",
+  "basePath": "/api",
+  "schemes": [
+      "http"
+  ],
+  "paths": {
+      "/legends": {
+          "get": {
+              "description": "Retrieve a list of legends",
+              "responses": {
+                  "200": {
+                      "description": "Success",
+                      "schema": {
+                          "type": "array",
+                          "items": {
+                              "$ref": "#/definitions/Legend"
+                          }
+                      }
+                  }
+              }
+          }
+      },
+      "/legends/{nickname}": {
+          "get": {
+              "description": "Retrieve a specific legend by nickname",
+              "parameters": [
+                  {
+                      "name": "nickname",
+                      "in": "path",
+                      "required": true,
+                      "type": "string"
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "Success",
+                      "schema": {
+                          "$ref": "#/definitions/Legend"
+                      }
+                  },
+                  "404": {
+                      "description": "Legend not found"
+                  }
+              }
+          }
+      },
+      "/legends/create": {
+          "post": {
+              "description": "Create a new legend",
+              "parameters": [
+                  {
+                      "name": "legend",
+                      "in": "body",
+                      "required": true,
+                      "schema": {
+                          "$ref": "#/definitions/Legend"
+                      }
+                  }
+              ],
+              "responses": {
+                  "201": {
+                      "description": "Successfully created"
+                  }
+              }
+          }
+      },
+      "/legends/updateLegend": {
+          "put": {
+              "description": "Update an existing legend",
+              "parameters": [
+                  {
+                      "name": "legend",
+                      "in": "body",
+                      "required": true,
+                      "schema": {
+                          "$ref": "#/definitions/Legend"
+                      }
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "Successfully updated"
+                  }
+              }
+          }
+      }
+  },
+  "definitions": {
+    "Legend": {
+      "properties": {
+        "motoSentence": {
+          "type": "string"
+        },
+        "nickName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "about": {
+          "type": "string"
+        },
+        "realName": {
+          "type": "string"
+        },
+        "age": {
+          "type": "string"
+        },
+        "HomeWorld": {
+          "type": "string"
+        },
+        "tacticalAbility": {
+          "type": "string"
+        },
+        "passiveAbility": {
+          "type": "string"
+        },
+        "ultimateAbility": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
+  
