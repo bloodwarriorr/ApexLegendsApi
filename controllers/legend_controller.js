@@ -143,4 +143,18 @@ LegendRouter.put("/updateLegend",auth,fileUpload.single('image'),uploadImage, as
         });
     }
 })
+LegendRouter.delete("/deleteLegend/:nickname",auth, async (req, res) =>{
+    try {
+        
+        let legend = await new DB().FindByNickName("legends", req.params.nickname.toUpperCase());
+        if (legend) {
+            await new DB().DeleteDocById("legends", legend._id);
+        }
+        res.status(200).json("Legend deleted");
+    } catch (error) {
+        res.status(500).json({
+            error
+        });
+    }
+})
 module.exports = LegendRouter;
