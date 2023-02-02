@@ -17,7 +17,9 @@ server.use(session({secret:process.env.SESSION_SECRET}))
 server.use(passport.initialize())
 server.use(passport.session())
 server.use(express.json()); //enable json support
-server.use(cors()); //enable global access
+server.use(cors({
+    origin: 'https://apex-legends-api.vercel.app'
+})); //enable global access
 server.use(helmet()); //more defense
 server.use('/api/legends',require("./controllers/legend_controller"))
 server.use('/',require("./controllers/user_controller"))
