@@ -8,7 +8,7 @@ const passport = require('passport');
 const session=require('express-session')
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument=require('./swagger.json')
-const options = { customCssUrl: './node_modules/swagger-ui-dist/swagger-ui.css', customSiteTitle: "The Words That I Know API - Swagger" };
+const options = { customCssUrl: './swagger-css/swagger-ui.css', customSiteTitle: "The Words That I Know API - Swagger" };
 //port
 const PORT = process.env.PORT || 5008;
 //create server
