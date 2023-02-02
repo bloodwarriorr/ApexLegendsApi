@@ -4,8 +4,9 @@ const GoogleStrategy = require('passport-google-oauth2').Strategy;
 passport.use(new GoogleStrategy({
     clientID:process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://apex-legends-api.vercel.app:5008/google/callback",
-    passReqToCallback:true
+    callbackURL: "https://apex-legends-api.vercel.app/google/callback",
+    passReqToCallback:true,
+    proxy: true
   },
   function(request, accessToken, refreshToken, profile, done) {
     return done(null, profile);
