@@ -8,7 +8,6 @@ const fileUpload = multer();
 
 LegendRouter.get("/", auth,async (req, res) => {
     try {
-       
         let legends = await new DB().FindAll("legends");
         res.status(200).json(legends);
     } catch (error) {
