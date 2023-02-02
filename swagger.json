@@ -70,6 +70,30 @@
               }
           }
       },
+      "/legends/deleteLegend/{nickname}": {
+        "delete": {
+            "description": "delete by nickname",
+            "parameters": [
+                {
+                    "name": "nickname",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "legend deleted successfully",
+                    "schema": {
+                        "$ref": "#/definitions/Legend"
+                    }
+                },
+                "404": {
+                    "description": "Legend not found"
+                }
+            }
+        }
+    },
       "/legends/updateLegend": {
           "put": {
               "description": "Update an existing legend",
