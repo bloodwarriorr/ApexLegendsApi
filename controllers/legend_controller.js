@@ -7,7 +7,7 @@ const auth=require("../Middleware/auth")
 const fileUpload = multer();
 
 LegendRouter.get("/", auth,async (req, res) => {
-
+    console.log(req.user);
     try {
        
         let legends = await new DB().FindAll("legends");
