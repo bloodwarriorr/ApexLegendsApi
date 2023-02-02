@@ -7,7 +7,6 @@
   "host":"localhost:5008",
   "basePath": "/api",
   "schemes": [
-      "https",
       "http"
   ],
   "paths": {
