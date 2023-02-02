@@ -1,0 +1,32 @@
+
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@now/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "server.js"
+      },
+      {
+        "src": "/api/legends(.*)",
+        "dest": "server.js"
+      },
+      {
+        "src": "/api/docs(.*)",
+        "dest": "server.js"
+      },
+      {
+        "src": "/uploads(.*)",
+        "dest": "server.js"
+      },
+      {
+        "src": "/logout(.*)",
+        "dest": "server.js"
+      }
+    ]
+  }
