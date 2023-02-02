@@ -4,7 +4,7 @@
       "version": "1.0.0",
       "title": "Legends API"
   },
-  "host":"apex-legends-api.vercel.app",
+  "host":"localhost:5008",
   "basePath": "/api",
   "schemes": [
       "https"
