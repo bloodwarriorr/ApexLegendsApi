@@ -8,7 +8,7 @@ const passport = require('passport');
 const session=require('express-session')
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument=require('./swagger.json')
-
+const path = require('path')
 const options = {
     customCss: '.swagger-ui .topbar { color:red }',
     customSiteTitle: "Apex-Legends-API",
@@ -25,7 +25,7 @@ server.use(express.json()); //enable json support
 server.use(cors({
     origin: 'https://apex-legends-api.vercel.app'
 })); //enable global access
-server.use('/api/docs',express.static(join(process.cwd(),"swagger-css")))
+server.use('/api/docs',express.static(path.join(process.cwd(),"swagger-css")))
 server.use(helmet()); //more defense
 server.use('/api/legends',require("./controllers/legend_controller"))
 server.use('/',require("./controllers/user_controller"))
