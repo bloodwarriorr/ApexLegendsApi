@@ -23,7 +23,7 @@ server.use(cors({
 server.use(helmet()); //more defense
 server.use('/api/legends',require("./controllers/legend_controller"))
 server.use('/',require("./controllers/user_controller"))
-server.use(express.static('./swagger-css'));
+server.use(express.static(__dirname+'/swagger-css'));
 server.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument,options));
 
 server.get('/logout',(req,res)=>{
