@@ -8,7 +8,7 @@ const passport = require('passport');
 const session=require('express-session')
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument=require('./swagger.json')
-const options = { customCssUrl: './swagger-css/swagger-ui.css', customSiteTitle: "Apex Legends API" };
+const options = { customCss: './swagger-css/swagger-ui.css', customSiteTitle: "Apex Legends API" };
 //port
 const PORT = process.env.PORT || 5008;
 //create server
