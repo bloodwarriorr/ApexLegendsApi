@@ -7,4 +7,4 @@ The api contains Swagger UI page of the controllers.
 ## ScreenShot:
 
 
-![swaggerUI](https://user-images.githubusercontent.com/93253836/215322117-841e984c-5b12-4688-a7fc-2920877afd07.PNG)
+![swaggerUI](https://user-images.githubusercontent.com/93253836/217024893-1a5b1081-a1c5-44d9-a000-1e689e879991.PNG)
