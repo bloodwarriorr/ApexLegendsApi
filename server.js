@@ -25,10 +25,10 @@ server.use(express.json()); //enable json support
 server.use(cors({
     origin: 'https://apex-legends-api.vercel.app'
 })); //enable global access
-server.use('/api/docs',express.static(path.join(process.cwd(),"swagger-css")))
 server.use(helmet()); //more defense
 server.use('/api/legends',require("./controllers/legend_controller"))
 server.use('/',require("./controllers/user_controller"))
+server.use('/api/docs',express.static(path.join(process.cwd(),"swagger-css")))
 
 server.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument,options));
 
