@@ -9,7 +9,10 @@ const session=require('express-session')
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument=require('./swagger.json')
 
-const options = { customCss: './swagger-css', customSiteTitle: "Apex Legends API" };
+const options = {
+    customCss: '/swagger-css/swagger-ui.css',
+    customSiteTitle: "New Title"
+  };
 //port
 const PORT = process.env.PORT || 5008;
 //create server
@@ -24,8 +27,8 @@ server.use(cors({
 server.use(helmet()); //more defense
 server.use('/api/legends',require("./controllers/legend_controller"))
 server.use('/',require("./controllers/user_controller"))
-server.use('/api/docs/swagger-ui.css',express.static('./swagger-css'))
-server.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument,'','',options.customCss));
+
+server.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument,options));
 
 server.get('/logout',(req,res)=>{
     req.logOut()
