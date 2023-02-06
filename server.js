@@ -10,8 +10,9 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument=require('./swagger.json')
 
 const options = {
-    customCss: '/swagger-css/swagger-ui.css',
-    customSiteTitle: "New Title"
+    customCss: '.swagger-ui .topbar { color:red }',
+    customSiteTitle: "Apex-Legends-API",
+
   };
 //port
 const PORT = process.env.PORT || 5008;
@@ -24,6 +25,7 @@ server.use(express.json()); //enable json support
 server.use(cors({
     origin: 'https://apex-legends-api.vercel.app'
 })); //enable global access
+server.use('/api/docs',express.static(join(process.cwd(),"swagger-css")))
 server.use(helmet()); //more defense
 server.use('/api/legends',require("./controllers/legend_controller"))
 server.use('/',require("./controllers/user_controller"))
